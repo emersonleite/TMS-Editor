@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Mirror Editor</title>
+
+  <script src="../codemirror/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="../codemirror/lib/codemirror.css">
+  <script src="../codemirror/mode/javascript/javascript.js"></script>
+  <link rel="stylesheet" href="../codemirror/theme/dracula.css">
+  <script src="../codemirror/addon/runmode/runmode.js"></script>
+  <script src="../codemirror/addon/hint/javascript-hint.js"></script>
+  <script src="../codemirror/addon/hint/show-hint.js"></script>
+  <link rel="stylesheet" href="../codemirror/addon/hint/show-hint.css">
+
+</head>
+<body>
+    <textarea name="editor" id="editor" cols="30" rows="10">
+      var w = 10;
+      console.log(w);
+      var array = [1,2,3];
+      array.pop();
+      console.log(array);
+  console.log(eval('typeof array'));
+  
+  
+let o = {q: 12,b: false};
+console.log(o);
+    console.log(Math.PI);
+    </textarea>
+    <button onclick="run();">run</button>
+    <pre id="result"></pre>
+
+    <script>
+      const element = document.querySelector('#editor');
+      const result = document.querySelector('#result');
+      
+     
+      const editor = CodeMirror.fromTextArea(element, {
+        mode: 'javascript',
+        theme: 'dracula',
+        lineNumbers: true,
+        extraKeys: {'Ctrl-Space': 'autocomplete'}
+      });
+      editor.setSize('390', '390');
+
+
+      function addEvent(){
+      element.addEventListener('change', ()=>{
+        const elementNew = element.value;
+      })
+    }
+
+    addEvent();
+
+    function show(item){
+          result.innerHTML += `<p>${JSON.stringify(item)}</p>`;
+        }
+
+
+      function run(){
+        result.innerHTML = '';
+
+        const presentation = document.querySelectorAll('span[role="presentation"]');
+        const presentationArray = [... presentation];
+        console.log(... presentationArray);
+    
+        let arr = '';
+        const varr = presentationArray.map((item) =>{
+          arr += item.textContent;
+        });
+
+        console.log(arr);
+        
+        const script = document.createElement('script');
+        const x = arr;
+        
+        script.append(show);
+        xModif = x.split('console.log').join('show');
+        xModif = xModif.split('const').join('var');
+        xModif = xModif.split('let').join('var');
+        xModif = xModif.split('\n').join('...');
+        script.append(xModif);
+        document.body.append(script);
+        console.log(script);
+      }
+    </script>
+</body>
+</html>
