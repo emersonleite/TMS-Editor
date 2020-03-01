@@ -27,7 +27,7 @@ export default class editor {
 
   convertToCodeMirrorEditor() {
     const editor = CodeMirror.fromTextArea(this.textArea, this.options);
-    editor.setSize("390", "390");
+    editor.setSize("480", "390");
     return editor;
   }
 
