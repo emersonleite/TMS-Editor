@@ -1,0 +1,23 @@
+/* Footer */
+footer.footer {
+  height: 90px;
+  background-color: #a26b13;
+}
+
+.copyright-social {
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p.copyright {
+  flex: 1;
+  color: white;
+  font-family: "Montserrat";
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+img.github-icon {
+  width: 60px;
+}

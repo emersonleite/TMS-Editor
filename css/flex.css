@@ -1,0 +1,12 @@
+.flex {
+  display: flex;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.column {
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}

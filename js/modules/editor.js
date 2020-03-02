@@ -4,14 +4,14 @@ export default class editor {
     tagResult,
     tagConsole,
     tagRun,
-    tagReset,
-    //content = `console.log('hello')`
+    tagClear,
+    tagReset
   ) {
     this.options = options;
     this.consoleResult = document.querySelector(tagResult);
     this.textArea = document.querySelector(tagConsole);
-    this.content = this.textArea.innerText;
     this.buttonRun = document.querySelector(tagRun);
+    this.buttonClear = document.querySelector(tagClear);
     this.buttonReset = document.querySelector(tagReset);
   }
 
@@ -29,14 +29,6 @@ export default class editor {
     const editor = CodeMirror.fromTextArea(this.textArea, this.options);
     editor.setSize("480", "390");
     return editor;
-  }
-
-  set lineNumber(line) {
-    this._lineNumber = line;
-  }
-
-  get lineNumber() {
-    return this._lineNumber;
   }
 
   get showConsole() {
@@ -92,6 +84,15 @@ export default class editor {
     return this.changeConsoleLog(contentScript); // console.log() >>>>>>>> show();
   }
 
+  //(console\.log\(\'?\"?\w+\'?\"?\))
+  /*
+
+  const a = ()=> {console.log('ola')}
+
+  function a() = {console.log('ola')}
+  
+  */
+
   // Criando elemento com a tag especificada
   tagArea(tagName = "script", nameClass = "script-editor") {
     const area = document.createElement(tagName);
@@ -115,9 +116,9 @@ export default class editor {
 
   run() {
     const content = this.defineContentScript(this.definePresentation());
-    const tagArea = this.tagArea();
+    this.tagAreaCreated = this.tagArea();
     this.appendContentInTagArea(
-      tagArea,
+      this.tagAreaCreated,
       this.constResult,
       this.showLineNumber,
       this.showConsole,
@@ -125,12 +126,25 @@ export default class editor {
       content,
       "}catch(error){ result.innerHTML = error }"
     );
-    this.appendContentInTagArea(document.body, tagArea);
-    this.deletePreviousElement(tagArea); // ok
+    this.appendContentInTagArea(document.body, this.tagAreaCreated);
+    this.deletePreviousElement(this.tagAreaCreated); // ok
+
   }
 
   reset() {
     result.innerHTML = "";
+  }
+
+  inicialContent() {
+    this.convertToCodeMirrorEditor();
+    const editors = document.querySelectorAll(".CodeMirror");
+    editors[1].remove();
+    this.deleteScript();
+    this.reset();
+  }
+
+  deleteScript() {
+    this.tagAreaCreated.remove();
   }
 
   addEventButtonRun() {
@@ -141,12 +155,19 @@ export default class editor {
 
   addEventButtonReset() {
     this.buttonReset.addEventListener("click", () => {
+      this.inicialContent();
+    });
+  }
+
+  addEventButtonClear() {
+    this.buttonClear.addEventListener("click", () => {
       this.reset();
     });
   }
 
   init() {
     this.addEventButtonRun();
+    this.addEventButtonClear();
     this.addEventButtonReset();
     this.convertToCodeMirrorEditor();
     return this;

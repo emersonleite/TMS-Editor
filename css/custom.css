@@ -7,16 +7,16 @@
 
 .CodeMirror pre.CodeMirror-line,
 .CodeMirror pre.CodeMirror-line-like {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .CodeMirror-linenumber {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .line-result, .line-number {
   font-family: monospace;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-right: 30px;
 }
 

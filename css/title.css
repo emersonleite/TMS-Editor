@@ -1,0 +1,16 @@
+h1.tms {
+  font-family: "Montserrat";
+  font-size: 4.5em;
+  font-weight: bold;
+  color: #f39c12;
+  margin-top: 100px;
+}
+
+h2.editor {
+  font-family: "Lora";
+  font-size: 3.75em;
+  font-weight: bold;
+  text-transform: lowercase;
+  color: #a26b13;
+  margin-top: 0px;
+}

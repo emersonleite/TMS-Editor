@@ -40,19 +40,21 @@
       <h2 class="editor">editor</h2>
       <div class="editor-box">
         <textarea id="console">
-console.log('ola'.length)
-let a = 10   
-const e = 20     
-console.log(a * e)
+const str = 'emerson batista leite'
+
+console.log(str.toUpperCase())
+          
+const a = ()=> 
+{
+console.log('ola')
+}
+          
+a();
         </textarea>
         <div class="result" id="result"></div>
         <img class="control-run" id="run" src="./img/big-arrow.svg" alt="" />
-        <img
-          class="control-reset"
-          id="reset"
-          src="./img/reset-button.svg"
-          alt=""
-        />
+        <img class="control-clear" id="clear" src="./img/clear-button.svg" alt="" />
+        <img class="control-reset" id="reset" src="./img/reset-button.svg" alt="" />
       </div>
       <div class="description">
         <div class="list">
@@ -99,7 +101,7 @@ console.log(a * e)
     </div>
     <footer class="footer">
       <div class="copyright-social flex">
-        <p class="copyright">by Emerson Leite</p>
+        <p class="copyright"><a href="https://www.emersonleite.dev">by Emerson Leite</a></p>
         <img class="github-icon" src="./img/github-icon.svg" alt="" />
       </div>
     </footer>

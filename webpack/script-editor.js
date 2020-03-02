@@ -10,5 +10,5 @@ const options = {
 };
 
 // iniciando o editor
-const editor = new Editor(options, '#result', '#console', "#run", "#reset");
+const editor = new Editor(options, '#result', '#console', "#run", "#clear", "#reset");
 editor.init().run();
