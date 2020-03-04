@@ -73,10 +73,13 @@ export default class editor {
     let contentScript = "";
     let arr = [];
     presentation.map(item => {
+      const regexp = /(.+)?\;?(console\.log\(\'?\"?\w+\'?\"?\))(\})?(\;)?/g;
       let line =
         item.parentElement.previousElementSibling.childNodes[0].textContent;
-      if (/console/g.test(item.textContent)) {
+      if (/^console\.log\(\)/g.test(item.textContent)) {
         contentScript += `showLine(${line}) + ${item.textContent}\n`;
+      } else if (regexp.test(item.textContent)) {
+        contentScript += `${item.textContent.replace(regexp, "$1\n$2\n$3$4")}`;
       } else {
         contentScript += `${item.textContent}\n`;
       }
@@ -128,7 +131,6 @@ export default class editor {
     );
     this.appendContentInTagArea(document.body, this.tagAreaCreated);
     this.deletePreviousElement(this.tagAreaCreated); // ok
-
   }
 
   reset() {
