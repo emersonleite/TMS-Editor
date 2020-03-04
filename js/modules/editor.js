@@ -1,15 +1,15 @@
 export default class editor {
   constructor(
     options = this.defaultOptions,
-    tagResult,
     tagConsole,
+    tagResult,
     tagRun,
     tagClear,
     tagReset
   ) {
     this.options = options;
-    this.consoleResult = document.querySelector(tagResult);
     this.textArea = document.querySelector(tagConsole);
+    this.consoleResult = document.querySelector(tagResult);
     this.buttonRun = document.querySelector(tagRun);
     this.buttonClear = document.querySelector(tagClear);
     this.buttonReset = document.querySelector(tagReset);
