@@ -69,6 +69,6 @@ textarea#console {
 }
 
 span.line-number,
-p.line-result {
+p.line-result, p.line-error {
   margin-left: 40px;
 }

@@ -16,16 +16,26 @@
 
     <!-- Importando Codemirror -->
 
-    <script src="./codemirror/lib/codemirror.js"></script>
-    <link rel="stylesheet" href="./codemirror/lib/codemirror.css" />
-    <script src="./codemirror/mode/javascript/javascript.js"></script>
-    <link rel="stylesheet" href="./codemirror/theme/dracula.css" />
-    <script src="./codemirror/addon/runmode/runmode.js"></script>
-    <script src="./codemirror/addon/hint/javascript-hint.js"></script>
-    <script src="./codemirror/addon/hint/show-hint.js"></script>
-    <link rel="stylesheet" href="./codemirror/addon/hint/show-hint.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/lib/codemirror.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/mode/javascript/javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/addon/hint/javascript-hint.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/addon/hint/show-hint.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/addon/hint/show-hint.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/lib/codemirror.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/theme/dracula.css">
     <link rel="stylesheet" href="./css/custom.css" />
+
+
+   <!--  <script src="./codemirror/lib/codemirror.js"></script> -->
+    <!-- <link rel="stylesheet" href="./codemirror/lib/codemirror.css" /> -->
+ <!--    <script src="./codemirror/mode/javascript/javascript.js"></script> -->
+    <!-- <link rel="stylesheet" href="./codemirror/theme/dracula.css" /> -->
+ <!--    <script src="./codemirror/addon/runmode/runmode.js"></script> -->
+    <!-- <script src="./codemirror/addon/hint/javascript-hint.js"></script> -->
+   <!--  <script src="./codemirror/addon/hint/show-hint.js"></script> -->
+    <!-- <link rel="stylesheet" href="./codemirror/addon/hint/show-hint.css" /> -->
+
+    
 
     <!-- Terminando Importando Codemirror -->
   </head>
@@ -40,16 +50,11 @@
       <h2 class="editor">editor <span class="pointer">|</span></h2>
       <div class="editor-box">
         <textarea id="console">
-const str = 'emerson batista leite'
+const carros = ['Ford', 'Fiat', 'Honda'];
 
-console.log(str.toUpperCase())
-          
-const a = ()=> 
-{
-console.log('ola')
-}
-          
-a();
+carros.forEach(function(item, index, array) {
+  console.log(item.toUpperCase());
+});
         </textarea>
         <div class="result" id="result"></div>
         <img class="control-run" id="run" src="./img/big-arrow.svg" alt="" />

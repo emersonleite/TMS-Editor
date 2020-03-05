@@ -5,7 +5,8 @@ export default class editor {
     tagResult,
     tagRun,
     tagClear,
-    tagReset
+    tagReset,
+    //condemirrorVersion = "5.52.0"
   ) {
     this.options = options;
     this.textArea = document.querySelector(tagConsole);
@@ -13,7 +14,21 @@ export default class editor {
     this.buttonRun = document.querySelector(tagRun);
     this.buttonClear = document.querySelector(tagClear);
     this.buttonReset = document.querySelector(tagReset);
+    //this.condemirrorVersion = condemirrorVersion;
   }
+
+/*   appendScriptsCodemirror() {
+    const url = `https://cdn.jsdelivr.net/npm/codemirror@${this.condemirrorVersion}`;
+    const scriptsCodemirror = `<script src="${url}/lib/codemirror.js"></script>
+    <script src="${url}/mode/javascript/javascript.js"></script>
+    <script src="${url}/addon/hint/javascript-hint.js"></script>
+    <script src="${url}/addon/hint/show-hint.js"></script>
+    <link rel="stylesheet" href="${url}/addon/hint/show-hint.css">
+    <link rel="stylesheet" href="${url}/lib/codemirror.css">
+    <link rel="stylesheet" href="${url}/theme/dracula.css">`;
+    document.head.innerHTML += scriptsCodemirror;
+    console.log(document.head)
+  } */
 
   get defaultOptions() {
     return {
@@ -71,30 +86,24 @@ export default class editor {
   // Definindo conteudo do script com base no array de elementos da área de cádigo
   defineContentScript(presentation) {
     let contentScript = "";
-    let arr = [];
     presentation.map(item => {
-      const regexp = /(.+)?\;?(console\.log\(\'?\"?\w+\'?\"?\))(\})?(\;)?/g;
+      const regexp1 = /(.+)?\;?(console\.log\(\'?\"?\w+\.?\w+?\(?\)?\'?\"?\))(\})?(\;)?/g;
+      const regexp2 = /^(\s+)?console\.log\(\'?\"?\w+\.?\w+?\(?\)?\'?\"?\)/g;
       let line =
         item.parentElement.previousElementSibling.childNodes[0].textContent;
-      if (/^console\.log\(\)/g.test(item.textContent)) {
+      if (regexp2.test(item.textContent)) {
         contentScript += `showLine(${line}) + ${item.textContent}\n`;
-      } else if (regexp.test(item.textContent)) {
-        contentScript += `${item.textContent.replace(regexp, "$1\n$2\n$3$4")}`;
+      } else if (regexp1.test(item.textContent)) {
+        contentScript += `${item.textContent.replace(
+          regexp1,
+          `$1\nshowLine(${line})+$2\n$3$4`
+        )}`;
       } else {
         contentScript += `${item.textContent}\n`;
       }
     });
     return this.changeConsoleLog(contentScript); // console.log() >>>>>>>> show();
   }
-
-  //(console\.log\(\'?\"?\w+\'?\"?\))
-  /*
-
-  const a = ()=> {console.log('ola')}
-
-  function a() = {console.log('ola')}
-  
-  */
 
   // Criando elemento com a tag especificada
   tagArea(tagName = "script", nameClass = "script-editor") {
@@ -127,7 +136,7 @@ export default class editor {
       this.showConsole,
       "try {",
       content,
-      "}catch(error){ result.innerHTML = error }"
+      "}catch(error){ result.innerHTML += `<p class='line-error'>${error}</p>` }"
     );
     this.appendContentInTagArea(document.body, this.tagAreaCreated);
     this.deletePreviousElement(this.tagAreaCreated); // ok
@@ -168,6 +177,7 @@ export default class editor {
   }
 
   init() {
+    //this.appendScriptsCodemirror();
     this.addEventButtonRun();
     this.addEventButtonClear();
     this.addEventButtonReset();

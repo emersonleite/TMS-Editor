@@ -14,7 +14,7 @@
   font-size: 1.5em;
 }
 
-.line-result, .line-number {
+.line-result, .line-number, .line-error {
   font-family: monospace;
   font-size: 1.5em;
   margin-right: 30px;
@@ -26,4 +26,8 @@ color: #f39c12;
 
 .line-number {
   color: white;
+}
+
+.line-error {
+  color: #ff6666;
 }
