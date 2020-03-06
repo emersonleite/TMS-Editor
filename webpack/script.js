@@ -1,5 +1,6 @@
 import Editor from "../js/modules/editor.js";
 
+
 //const textArea = document.querySelector('#console');
 const options = {
   mode: "javascript",

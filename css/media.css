@@ -1,0 +1,20 @@
+@media (max-width: 940px){
+  div.editor-box {
+    width: 100%;
+    flex-direction: column;
+    margin: 0 50px 0 50px;
+  }
+
+  div.container {
+    max-width: 800px;
+  }
+
+  div.result {
+    max-width: 100%;
+  }
+
+  div.CodeMirror {
+    max-width: 100%;
+  }
+}
+
