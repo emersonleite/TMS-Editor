@@ -6,7 +6,6 @@ export default class editor {
     tagRun,
     tagClear,
     tagReset,
-    //condemirrorVersion = "5.52.0"
   ) {
     this.options = options;
     this.textArea = document.querySelector(tagConsole);
@@ -14,7 +13,6 @@ export default class editor {
     this.buttonRun = document.querySelector(tagRun);
     this.buttonClear = document.querySelector(tagClear);
     this.buttonReset = document.querySelector(tagReset);
-    //this.condemirrorVersion = condemirrorVersion;
   }
 
 /*   appendScriptsCodemirror() {
@@ -61,7 +59,7 @@ export default class editor {
   }
 
   get constResult() {
-    return "result = document.querySelector('.result');";
+    return "result = document.querySelector('.editor__result');";
   }
 
   // Retornando todos os elementos de span do conteúdo da area de código em um array, exceto com quebra de linha

@@ -1,7 +1,5 @@
 import Editor from "../js/modules/editor.js";
 
-
-//const textArea = document.querySelector('#console');
 const options = {
   mode: "javascript",
   theme: "dracula",
@@ -13,15 +11,15 @@ const options = {
 // iniciando o editor
 const editor = new Editor(
   options,
-  "#console",
-  "#result",
-  "#run",
-  "#clear",
-  "#reset"
+  ".editor__console",
+  ".editor__result",
+  ".editor__button-run",
+  ".editor__button-clear",
+  ".editor__button-reset"
 );
 editor.init().run();
 
-const logoGithub = document.querySelector('.github-icon');
+const logoGithub = document.querySelector('.footer__repository-image');
 
 // Eventos de mudança de fundo na logo do githb no footer
 logoGithub.addEventListener('mouseover', function(event){

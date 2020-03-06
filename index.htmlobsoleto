@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap"
+      rel="stylesheet" />
+    <title>TMS - Editor</title>
+
+    <!-- Importando Codemirror -->
+
+    <script src="https://cdn.jsdelivr.net/gh/emersonleite/TMS-Editor/js/modules/tms-editor.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/lib/codemirror.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/mode/javascript/javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/addon/hint/javascript-hint.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/addon/hint/show-hint.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/addon/hint/show-hint.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/lib/codemirror.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.0/theme/dracula.css"/>
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <!--  <script src="./codemirror/lib/codemirror.js"></script> -->
+    <!-- <link rel="stylesheet" href="./codemirror/lib/codemirror.css" /> -->
+    <!--    <script src="./codemirror/mode/javascript/javascript.js"></script> -->
+    <!-- <link rel="stylesheet" href="./codemirror/theme/dracula.css" /> -->
+    <!--    <script src="./codemirror/addon/runmode/runmode.js"></script> -->
+    <!-- <script src="./codemirror/addon/hint/javascript-hint.js"></script> -->
+    <!--  <script src="./codemirror/addon/hint/show-hint.js"></script> -->
+    <!-- <link rel="stylesheet" href="./codemirror/addon/hint/show-hint.css" /> -->
+
+    <!-- Terminando Importando Codemirror -->
+  </head>
+  <body>
+    <header>
+      <nav class="header-nav">
+        <h1 class="logo-header">TMS</h1>
+      </nav>
+    </header>
+    <div class="flex column">
+      <h1 class="tms">The More Simple</h1>
+      <h2 class="editor">editor <span class="pointer">|</span></h2>
+      <div class="container">
+        <div class="editor-box">
+          <textarea id="console">
+const carros = ['Ford', 'Fiat', 'Honda'];
+
+carros.forEach(function(item, index, array) {
+  console.log(item.toUpperCase());
+});
+        </textarea
+          >
+          <div class="result" id="result"></div>
+          <img class="control-run" id="run" src="./img/big-arrow.svg" alt="" />
+          <img
+            class="control-clear"
+            id="clear"
+            src="./img/clear-button.svg"
+            alt=""
+          />
+          <img
+            class="control-reset"
+            id="reset"
+            src="./img/reset-button.svg"
+            alt=""
+          />
+        </div>
+        <div class="description">
+          <div class="list">
+            <ul>
+              <li>
+                <img
+                  class="little-arrow"
+                  src="./img/little-arrow.svg"
+                  alt=""
+                /><em class="list-item">browser embed</em>
+              </li>
+              <li>
+                <img
+                  class="little-arrow"
+                  src="./img/little-arrow.svg"
+                  alt=""
+                /><em class="list-item">javascript highlight</em>
+              </li>
+              <li>
+                <img
+                  class="little-arrow"
+                  src="./img/little-arrow.svg"
+                  alt=""
+                /><em class="list-item">autocomplete</em>
+              </li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>
+                <img
+                  class="little-arrow"
+                  src="./img/little-arrow.svg"
+                  alt=""
+                /><em class="list-item"
+                  >based in <a href="www.codemirror.net">codemirror</a></em
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="copyright-social flex">
+        <p class="copyright">
+          <a href="https://www.emersonleite.dev">by Emerson Leite</a>
+        </p>
+        <a href="https://github.com/emersonleite/TMS-Editor"
+          ><img class="github-icon" src="./img/github-icon.svg" alt=""
+        /></a>
+      </div>
+    </footer>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
