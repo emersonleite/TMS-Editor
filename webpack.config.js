@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    script: ['@babel/polyfill', 'whatwg-fetch', "./webpack/script.js"],
+    script: [/* '@babel/polyfill', 'whatwg-fetch',  */"./webpack/script.js"],
   },
   output: {
     path: path.resolve(__dirname, "./js"),
