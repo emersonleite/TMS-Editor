@@ -1,5 +1,5 @@
 /* Tela do editor*/
-div.editor-box {
+.editor {
   background-color: #2c3e50;
   border-radius: 15px;
   display: flex;
@@ -10,62 +10,59 @@ div.editor-box {
   width: 940px;
 }
 
+.editor__console {
+  background: white;
+  border: none;
+  flex: 1;
+  height: 400px;
+}
+
+.editor__result {
+  background: #2c3e50;
+  border-left: 3px solid white;
+  flex: 1;
+  overflow: auto;
+  max-height: 100%;
+}
+
 /* Botões */
-img.control-run {
+.editor__button-run {
   cursor: pointer;
   left: 50px;
   position: absolute;
   top: 460px;
 }
 
-img.control-clear {
+.editor__button-clear {
   cursor: pointer;
   left: 140px;
   position: absolute;
   top: 465px;
 }
 
-img.control-reset {
+.editor__button-reset {
   cursor: pointer;
   left: 240px;
   position: absolute;
   top: 465px;
 }
 
-img.control-run:hover {
+.editor__button-run:hover {
   width: 75px;
   left: 48px;
   top: 458px;
 }
 
-img.control-clear:hover {
+.editor__button-clear:hover {
   width: 75px;
   top: 463px;
   left: 138px;
 }
 
-img.control-reset:hover {
+.editor__button-reset:hover {
   width: 75px;
   top: 463px;
   left: 238px;
-}
-
-/* Areas de texto - input output*/
-textarea#console {
-  border: none;
-  flex: 1;
-  background: white;
-}
-
-div#result {
-  background: #2c3e50;
-  border-left: 1px solid white;
-  flex: 1;
-  overflow: auto;
-}
-
-textarea#console {
-  height: 400px;
 }
 
 span.line-number,

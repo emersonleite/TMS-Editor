@@ -1,18 +1,16 @@
-nav.header-nav {
-  display: flex;
+.header {
   background: #2c3e50;
+  display: flex;
   height: 90px;
   margin: 0 auto;
 }
 
-
-h1.logo-header {
+h1.header__logo {
+  align-items: center;
+  color: #f39c12;
   display: inline-flex;
   flex: 1;
   font-size: 3em;
   font-family: "Montserrat";
-  color: #f39c12;
-  align-items: center;
   justify-content: center;
 }
-

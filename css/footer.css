@@ -1,29 +1,24 @@
 /* Footer */
-footer.footer {
-  height: 90px;
+.footer {
   background-color: #a26b13;
+  margin-top: 50px;
 }
 
-.copyright-social {
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
-}
-
-p.copyright {
+.footer__copyright {
   color: white;
   font-family: "Montserrat";
   font-size: 1.5em;
   font-weight: bold;
 }
 
-p.copyright:hover {
+.footer__copyright :hover {
   color: #2c3e50;
   font-weight: bolder;
 }
 
-
-img.github-icon {
-  width: 60px;
+.footer__repository-image {
   cursor: pointer;
+  padding: 16px 0;
+  width: 60px;
+  
 }

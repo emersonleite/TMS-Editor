@@ -1,36 +1,18 @@
-/* descrição */
+/* Description */
 
-div.description {
-  width: 100%;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  display: flex;
+.description__list-1, .description__list-2 {
+  margin-top: 30px;
 }
 
-div.list {
-  display: flex;
-  color: #a26b13;
-  font-weight: bold;
-  flex: 1;
-  font-family: "Lora";
-  font-size: 2.25em;
-}
-
-ul li {
-  margin-bottom: 25px;
-}
-
-img.little-arrow {
+.description__arrow {
   display: inline;
 }
 
-em.list-item {
+.description__item {
+  color: #a26b13;
+  font-weight: bold;
+  font-family: "Lora";
+  font-size: 2.25em;
   margin-left: 10px;
-}
-
-.before {
-  background: #a26b13;
-  height: 100%;
-  width: 8px;
-  margin-right: 20px;
+  padding-top: 30px;
 }

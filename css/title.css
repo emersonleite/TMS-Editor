@@ -1,21 +1,23 @@
-h1.tms {
+.site-title {
   font-family: "Montserrat";
   font-size: 4.5em;
   font-weight: bold;
   color: #f39c12;
-  margin-top: 100px;
+  margin-top: 70px;
+  text-align: center;
 }
 
-h2.editor {
+.site-title__minor {
   font-family: "Lora";
   font-size: 3.75em;
   font-weight: bold;
   text-transform: lowercase;
+  text-align: center;
   color: #a26b13;
-  margin-top: 0px;
+  margin-bottom: 70px;
 }
 
-span.pointer{
+.site-title__minor--cursor{
   font-family: "Lora";
   margin-bottom: 8px;
   animation: pointerAnima 1s forwards infinite ;
